@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="android.widget.SeekBar"/>
+<fullyQualifiedTypeName name="com.sid.utils.SeekBarProgress"/>
+<fullyQualifiedTypeName name="com.sid.utils.EditTextChange"/>
+<fullyQualifiedTypeName name="android.text.TextWatcher"/>
+<fullyQualifiedTypeName name="com.actionbarsherlock.view.Menu"/>
+<fullyQualifiedTypeName name="com.actionbarsherlock.view.MenuItem"/>
+<fullyQualifiedTypeName name="android.content.SharedPreferences"/>
+<fullyQualifiedTypeName name="com.sid.utils.ConfigData"/>
+<fullyQualifiedTypeName name="com.sid.utils.CommonUse"/>
+<fullyQualifiedTypeName name="android.widget.LinearLayout"/>
+<fullyQualifiedTypeName name="android.app.ProgressDialog"/>
+<fullyQualifiedTypeName name="android.graphics.drawable.Drawable"/>
+<fullyQualifiedTypeName name="android.content.res.Resources"/>
+<fullyQualifiedTypeName name="android.widget.TextView"/>
+<fullyQualifiedTypeName name="com.dropbox.client2.session.Session.AccessType"/>
+<fullyQualifiedTypeName name="com.dropbox.client2.DropboxAPI"/>
+<fullyQualifiedTypeName name="com.dropbox.client2.session.AppKeyPair"/>
+<fullyQualifiedTypeName name="com.dropbox.client2.android.AndroidAuthSession"/>
+<fullyQualifiedTypeName name="com.dropbox.client2.session.AccessTokenPair"/>
+<fullyQualifiedTypeName name="android.util.Log"/>
+<fullyQualifiedTypeName name="android.view.MenuItem"/>
+<fullyQualifiedTypeName name="java.util.Random"/>
+<fullyQualifiedTypeName name="android.widget.EditText"/>
+<fullyQualifiedTypeName name="java.io.FileOutputStream"/>
+<fullyQualifiedTypeName name="android.content.Context"/>
+<fullyQualifiedTypeName name="android.widget.Toast"/>
+<fullyQualifiedTypeName name="java.io.InputStreamReader"/>
+<fullyQualifiedTypeName name="java.io.BufferedReader"/>
+<fullyQualifiedTypeName name="java.io.File"/>
+<fullyQualifiedTypeName name="java.io.FileInputStream"/>
+<fullyQualifiedTypeName name="android.os.DropBoxManager.Entry"/>
+<fullyQualifiedTypeName name="com.dropbox.client2.DropboxAPI.Entry"/>
+</qualifiedTypeNameHistroy>

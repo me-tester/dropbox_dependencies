@@ -1,0 +1,83 @@
+package com.sid.testdropbox;
+
+import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+
+import com.dropbox.client2.DropboxAPI;
+import com.dropbox.client2.android.AndroidAuthSession;
+import com.dropbox.client2.session.AccessTokenPair;
+import com.dropbox.client2.session.AppKeyPair;
+import com.dropbox.client2.session.Session.AccessType;
+
+public class MainActivity extends ActionBarActivity {
+
+	final static private String APP_KEY = "tm9z8i89nrjoim6";
+	final static private String APP_SECRET = "ut4902dtdhrvumm";
+	final static private AccessType ACCESS_TYPE = AccessType.APP_FOLDER;
+	
+	// In the class declaration section:
+	private DropboxAPI<AndroidAuthSession> mDBApi;
+	
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+		
+		// And later in some initialization function:
+		AppKeyPair appKeys = new AppKeyPair(APP_KEY, APP_SECRET);
+		AndroidAuthSession session = new AndroidAuthSession(appKeys, ACCESS_TYPE);
+		mDBApi = new DropboxAPI<AndroidAuthSession>(session);
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.main, menu);
+		return super.onCreateOptionsMenu(menu);
+	}
+
+	
+	public void linkDrop() 
+	{
+		mDBApi.getSession().startAuthentication(MainActivity.this);
+	}
+
+	protected void onResume() {
+	    super.onResume();
+
+	    if (mDBApi.getSession().authenticationSuccessful()) 
+	    {
+	        try 
+	        {
+	            // Required to complete auth, sets the access token on the session
+	            mDBApi.getSession().finishAuthentication();
+
+	            AccessTokenPair tokens = mDBApi.getSession().getAccessTokenPair();
+	            Log.i("Auth proper", "tokens = " + tokens);
+	        } 
+	        catch (IllegalStateException e) 
+	        {
+	            Log.i("DbAuthLog", "Error authenticating", e);
+	        }
+	    }
+	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) 
+	{
+	    // Handle presses on the action bar items
+	    switch (item.getItemId()) 
+	    {
+	        case R.id.action_saveDbx:
+	        	linkDrop();
+	            return true;
+	        default:
+	            return super.onOptionsItemSelected(item);
+	    }
+	}
+}

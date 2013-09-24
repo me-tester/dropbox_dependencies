@@ -1,0 +1,63 @@
+package com.sid.testdropbox;
+
+import com.dropbox.client2.DropboxAPI;
+import com.dropbox.client2.android.AndroidAuthSession;
+import com.dropbox.client2.session.AccessTokenPair;
+import com.dropbox.client2.session.AppKeyPair;
+import com.dropbox.client2.session.Session.AccessType;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.Menu;
+import android.view.View;
+
+public class MainActivity extends Activity {
+
+	final static private String APP_KEY = "fo8o0vb0ocyqzca";
+	final static private String APP_SECRET = "28r7qjnwhmrsm25";
+	final static private AccessType ACCESS_TYPE = AccessType.DROPBOX;
+	
+	// In the class declaration section:
+	private DropboxAPI<AndroidAuthSession> mDBApi;
+	
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+		
+		// And later in some initialization function:
+		AppKeyPair appKeys = new AppKeyPair(APP_KEY, APP_SECRET);
+		AndroidAuthSession session = new AndroidAuthSession(appKeys, ACCESS_TYPE);
+		mDBApi = new DropboxAPI<AndroidAuthSession>(session);
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.main, menu);
+		return true;
+	}
+
+	
+	public void linkDrop(View view) 
+	{
+		mDBApi.getSession().startAuthentication(MainActivity.this);
+	}
+
+	protected void onResume() {
+	    super.onResume();
+
+	    if (mDBApi.getSession().authenticationSuccessful()) {
+	        try {
+	            // Required to complete auth, sets the access token on the session
+	            mDBApi.getSession().finishAuthentication();
+
+	            AccessTokenPair tokens = mDBApi.getSession().getAccessTokenPair();
+	        } catch (IllegalStateException e) {
+	            Log.i("DbAuthLog", "Error authenticating", e);
+	        }
+	    }
+	}
+}
