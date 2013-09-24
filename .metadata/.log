@@ -6369,3 +6369,13 @@ Binding(CTRL+SHIFT+ARROW_LEFT,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.wst.sse.ui.structuredTextEditorScope,,cocoa,system)
+!SESSION 2013-09-24 19:43:17.767 -----------------------------------------------
+eclipse.buildId=v22.0.1-685705
+java.version=1.7.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+Framework arguments:  -product com.android.ide.eclipse.adt.package.product -keyring /Users/webwerks/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product com.android.ide.eclipse.adt.package.product -keyring /Users/webwerks/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2013-09-24 19:43:29.636
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences

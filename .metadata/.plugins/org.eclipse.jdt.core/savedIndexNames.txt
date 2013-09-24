@@ -7,10 +7,8 @@ INDEX VERSION 1.126+/Users/webwerks/Documents/workspace_adt/.metadata/.plugins/o
 1457410379.index
 3965452239.index
 2839704091.index
-1186720102.index
 1986427101.index
 1377251446.index
-3394436166.index
 4271193320.index
 890975073.index
 948405035.index
@@ -20,7 +18,6 @@ INDEX VERSION 1.126+/Users/webwerks/Documents/workspace_adt/.metadata/.plugins/o
 2679076266.index
 325743195.index
 2238964716.index
-1856896125.index
 2187152105.index
 1012376182.index
 1056287296.index
